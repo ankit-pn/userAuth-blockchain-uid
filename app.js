@@ -20,13 +20,13 @@ app.use((req, res, next) => {
         "Access-Control-Allow-Methods",
         "GET, POST, PUT, DELETE, PATCH, OPTIONS"
     );
-    next();
+    // next();
 });
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (request, response, next) => {
+app.get("/", (request, response) => {
     response.json({ message: "Hey! This is authentications server on blockchain, Do post request with proper data" });
 });
 
