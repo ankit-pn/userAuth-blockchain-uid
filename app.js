@@ -3,7 +3,6 @@ const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const Web3 = require('web3');
-const contract = require('@truffle/contract');
 const CONTRACT_ABI = require('./config');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 require('dotenv').config();
