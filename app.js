@@ -27,10 +27,10 @@ app.use((req, res, next) => {
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (request, response, next) => {
-    response.json({ message: "Hey! This is your server response!" });
-    // next();
-});
+// app.get("/", (request, response, next) => {
+//     response.json({ message: "Hey! This is your server response!" });
+//     // next();
+// });
 
 
 // app.get("/", (request, response) => {
