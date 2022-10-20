@@ -20,15 +20,22 @@ app.use((req, res, next) => {
         "Access-Control-Allow-Methods",
         "GET, POST, PUT, DELETE, PATCH, OPTIONS"
     );
-    // next();
+    next();
 });
 
+// body parser configuration
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-app.get("/", (request, response) => {
-    response.json({ message: "Hey! This is authentications server on blockchain, Do post request with proper data" });
+app.get("/", (request, response, next) => {
+    response.json({ message: "Hey! This is your server response!" });
+    // next();
 });
+
+
+// app.get("/", (request, response) => {
+//     response.json({ message: "Hey! This is authentications server on blockchain, Do post request with proper data" });
+// });
 
 var provider = new HDWalletProvider(process.env.MNEMONIC, 'https://goerli.infura.io/v3/' + process.env.INFURA_API_KEY);
 var web3 = new Web3(provider);
